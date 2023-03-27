@@ -1,2 +1,3 @@
 #!/usr/bin/env Rscript
-42
+args <- commandArgs()
+write(tail(args, n=1), "")
