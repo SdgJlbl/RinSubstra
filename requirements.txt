@@ -1,0 +1,2 @@
+substra==0.42.0
+substratools==0.20.0
