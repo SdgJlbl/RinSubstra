@@ -1,13 +1,13 @@
 import pickle
 import substratools as tools
-import sh
+import subprocess
 
 
 @tools.register
 def run_script(inputs, outputs, task_properties):
-    X = inputs["datasamples"]
-    raw_output = sh.Rscript('test.R', str(X))
-    model = int(raw_output)
+    file_path = inputs["datasamples"]
+    raw_output = subprocess.run(['Rscript', 'test.R', file_path], capture_output=True)
+    model = int(raw_output.stdout.strip())
     save_model(model, outputs["model"])
 
     

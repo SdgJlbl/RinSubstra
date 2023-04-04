@@ -4,7 +4,6 @@ FROM ghcr.io/substra/substra-tools:0.20.0-nvidiacuda11.8.0-base-ubuntu22.04-pyth
 # install dependencies
 RUN apt-get update \
  && apt-get -y install r-base
-RUN pip3 install sh
 
 # add your algorithm script to docker image
 ADD test.R .

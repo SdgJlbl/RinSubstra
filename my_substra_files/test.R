@@ -1,3 +1,5 @@
 #!/usr/bin/env Rscript
 args <- commandArgs()
-write(tail(args, n=1), "")
+path <- tail(args, 1)
+output <- readLines(path)
+write(output, "")
